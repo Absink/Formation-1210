@@ -49,7 +49,7 @@ export class OrdersService {
 
   // Update
   public update(order: Order): Observable<Order> {
-    return this.http.put<Order>(`${this.urlApi}orders/${order.id}`, order)
+    return this.http.put<Order>(`${this.urlApi}orders/${order.id}`, order);
   }
 
   // Update State
@@ -68,6 +68,11 @@ export class OrdersService {
           .map(filterData => new Order(filterData))
         )
     )
+  }
+
+  // Add order
+  public add(order: Order): Observable<Order> {
+    return this.http.post<Order>(`${this.urlApi}orders`, order);
   }
 
 
