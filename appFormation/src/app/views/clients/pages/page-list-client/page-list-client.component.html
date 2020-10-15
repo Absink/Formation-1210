@@ -1,3 +1,5 @@
+<app-titre-b [title]="a" [subtitle]="b"></app-titre-b>
+
 <app-table-dark *ngIf="collectionClients | async as col" [headers]="headers">
   <tr *ngFor="let c of col">
     <td>{{ c.id }}</td>

@@ -1,27 +1,30 @@
-<app-table-light *ngIf="collectionOrderObservable | async as collection"
-  [headers]="collectionHeaders">
+<app-titre-b [title]="title" [subtitle]="subtitle">
 
-  <tr *ngFor="let c of collection">
-    <td>{{ c.typePresta }}</td>
-    <td>{{ c.client }}</td>
-    <td [appColorDays] = "c.nbJours">{{ c.nbJours | days2 }}</td>
-    <td>{{ c.tjmHT }}</td>
-    <td>{{ c | total }}</td>
-    <td>{{ c | total: 'TTC' | currency: 'EUR'}}</td>
-    <td>{{ c.date | date: 'dd-MM-yyyy' }}</td>
-    <!-- <td [appColorState] = "c.state">{{ c.state }}</td> -->
-    <td [appColorState] = "c.state">
-      <select (change) = "changeState(c, $event)">
-        <option *ngFor="let s of states" [value]="s" [selected] = "s === c.state">
-          {{ s }}
-        </option>
-      </select>
-    </td>
-  </tr>
+  <app-table-light *ngIf="collectionOrderObservable | async as collection"
+    [headers]="collectionHeaders">
 
-</app-table-light>
+    <tr *ngFor="let c of collection">
+      <td>{{ c.typePresta }}</td>
+      <td>{{ c.client }}</td>
+      <td [appColorDays] = "c.nbJours">{{ c.nbJours | days2 }}</td>
+      <td>{{ c.tjmHT }}</td>
+      <td>{{ c | total }}</td>
+      <td>{{ c | total: 'TTC' | currency: 'EUR'}}</td>
+      <td>{{ c.date | date: 'dd-MM-yyyy' }}</td>
+      <!-- <td [appColorState] = "c.state">{{ c.state }}</td> -->
+      <td [appColorState] = "c.state">
+        <select (change) = "changeState(c, $event)">
+          <option *ngFor="let s of states" [value]="s" [selected] = "s === c.state">
+            {{ s }}
+          </option>
+        </select>
+      </td>
+    </tr>
 
+  </app-table-light>
 
-<app-btn [label]="btnRoute.label" [route]="btnRoute.route"></app-btn>
-<app-btn [label]="btnHref.label" [href]="btnHref.href"></app-btn>
-<app-btn [label]="btnAction.label" [action]="btnAction.action" (clicked)="openPopup()"></app-btn>
+  <app-btn [label]="btnRoute.label" [route]="btnRoute.route"></app-btn>
+  <app-btn [label]="btnHref.label" [href]="btnHref.href"></app-btn>
+  <app-btn [label]="btnAction.label" [action]="btnAction.action" (clicked)="openPopup()"></app-btn>
+
+</app-titre-b>
