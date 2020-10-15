@@ -15,13 +15,17 @@ export class PageListClientComponent implements OnInit {
   public headers: string[];
   public statesClient = Object.values(StateClient);
   public btn: BtnI;
+  public btn2: BtnI;
+  public filtered: boolean;
 
   constructor(
     private cs: ClientsService
   ) { }
 
   ngOnInit(): void {
+    this.filtered = false;
     this.btn = { label: 'Add Client', route: 'add' }
+    this.btn2 = { label: 'Filter', action: true }
     this.headers = [ 'Id', 'Name', 'CA', 'Commentaire', 'TVA', 'Total', 'Etat']
     this.cs.collection.subscribe(datas => {
       this.collectionClients = datas;
@@ -31,6 +35,15 @@ export class PageListClientComponent implements OnInit {
 
   public changeState(client: Client, event): void {
     this.cs.updateState(client, event.target.value).subscribe(data => client.state = data.state)
+  }
+
+  public filter(): void {
+    if (!this.filtered) {
+      this.cs.getAllFilterByCA(100000).subscribe(datas => this.collectionClients = datas);
+    } else {
+      this.cs.collection.subscribe(datas => this.collectionClients = datas);
+    }
+    this.filtered = !this.filtered;
   }
 
 }

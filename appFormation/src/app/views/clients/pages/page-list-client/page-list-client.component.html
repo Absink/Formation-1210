@@ -15,3 +15,6 @@
 </app-table-dark>
 
 <app-btn [label]="btn.label" [route]="btn.route"></app-btn>
+<app-btn [label]="btn2.label" [action]="btn2.action" (clicked)="filter()">
+  <app-icon-filter></app-icon-filter>
+</app-btn>

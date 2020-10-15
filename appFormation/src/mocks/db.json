@@ -61,6 +61,22 @@
       "ca": 120000,
       "comment": "Un comment pour client modis",
       "id": 2
+    },
+    {
+      "tva": 20,
+      "state": "Active",
+      "name": "Mobilo",
+      "ca": 5000,
+      "comment": "",
+      "id": 5
+    },
+    {
+      "tva": 20,
+      "state": "Inactive",
+      "name": "Tete",
+      "ca": 75000,
+      "comment": "new !!",
+      "id": 6
     }
   ],
   "users": [
