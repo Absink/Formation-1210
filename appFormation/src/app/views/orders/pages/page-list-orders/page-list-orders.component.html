@@ -1,4 +1,4 @@
-<app-titre-b [title]="title" [subtitle]="subtitle">
+<app-titre-a [title]="title" [subtitle]="subtitle">
 
   <app-table-light *ngIf="collectionOrderObservable | async as collection"
     [headers]="collectionHeaders">
@@ -27,4 +27,4 @@
   <app-btn [label]="btnHref.label" [href]="btnHref.href"></app-btn>
   <app-btn [label]="btnAction.label" [action]="btnAction.action" (clicked)="openPopup()"></app-btn>
 
-</app-titre-b>
+</app-titre-a>

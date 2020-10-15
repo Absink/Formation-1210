@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { TextsModule } from '../texts/texts.module';
 
 
 
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   declarations: [HeaderComponent, NavbarComponent, FooterComponent],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    TextsModule
   ], exports : [
     HeaderComponent,
     NavbarComponent,
