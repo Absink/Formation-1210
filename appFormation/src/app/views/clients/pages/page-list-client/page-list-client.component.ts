@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
 import { Client } from 'src/app/shared/models/client.model';
@@ -11,7 +12,7 @@ import { ClientsService } from '../../services/clients.service';
 })
 export class PageListClientComponent implements OnInit {
 
-  public collectionClients: Client[];
+  public collectionClients: Observable<Client[]>;
   public headers: string[];
   public statesClient = Object.values(StateClient);
   public btn: BtnI;
@@ -27,21 +28,19 @@ export class PageListClientComponent implements OnInit {
     this.btn = { label: 'Add Client', route: 'add' }
     this.btn2 = { label: 'Filter', action: true }
     this.headers = [ 'Id', 'Name', 'CA', 'Commentaire', 'TVA', 'Total', 'Etat']
-    this.cs.collection.subscribe(datas => {
-      this.collectionClients = datas;
-      console.log(this.collectionClients)
-    })
+    this.collectionClients = this.cs.collection;
   }
 
   public changeState(client: Client, event): void {
-    this.cs.updateState(client, event.target.value).subscribe(data => client.state = data.state)
+    this.cs.updateState(client, event.target.value).subscribe(data => client.state = data.state);
   }
 
   public filter(): void {
     if (!this.filtered) {
-      this.cs.getAllFilterByCA(100000).subscribe(datas => this.collectionClients = datas);
+      // this.cs.getAllFilterByCA(100000).subscribe(datas => this.collectionClients = datas);
+      this.collectionClients = this.cs.getAllFilterByCA(100000);
     } else {
-      this.cs.collection.subscribe(datas => this.collectionClients = datas);
+      this.collectionClients = this.cs.collection;
     }
     this.filtered = !this.filtered;
   }
