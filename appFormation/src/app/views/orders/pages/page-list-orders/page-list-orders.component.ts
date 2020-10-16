@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
@@ -21,17 +22,18 @@ export class PageListOrdersComponent implements OnInit {
   public btnHref: BtnI;
   public btnAction: BtnI;
 
-  public title: string;
-  public subtitle: string;
+  // public title: string;
+  // public subtitle: string;
 
   constructor(
-    private os: OrdersService
-  ) { }
+    private os: OrdersService,
+    public route: ActivatedRoute) {
+    }
 
   ngOnInit(): void {
     this.implementBtns();
-    this.title = 'Orders';
-    this.subtitle = 'List of order';
+    // this.title = 'Orders';
+    // this.subtitle = 'List of order';
     this.collectionHeaders = ['Type', 'Client', 'Nb jours', 'TJM HT', 'Total HT', 'Total TTC', 'Date', 'Etat'];
     this.collectionOrderObservable = this.os.collection;
     // this.os.collection.subscribe(orders => {

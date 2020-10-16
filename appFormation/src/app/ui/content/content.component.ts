@@ -20,11 +20,13 @@ export class ContentComponent implements OnInit {
     this.open = !this.open;
   }
 
-  public connect(): void {
-    this.us.getByUsernameAndPassword2('user1', 'user1').subscribe(data => {
-      localStorage.username = data[0].username;
-      localStorage.id = data[0].id;
-    })
+  public deconnect(): void {
+    // this.us.getByUsernameAndPassword2('user1', 'user1').subscribe(data => {
+    //   localStorage.username = data[0].username;
+    //   localStorage.id = data[0].id;
+    // })
+    localStorage.removeItem('id');
+    
   }
 
 }

@@ -1,4 +1,5 @@
-<app-titre-a [title]="title" [subtitle]="subtitle">
+<!-- <app-titre-a [title]="title" [subtitle]="subtitle"> -->
+<app-titre-a *ngIf="route.data | async as data2" [title]="data2.title" [subtitle]="data2.subtitle">
 
   <app-table-light *ngIf="collectionOrderObservable | async as collection"
     [headers]="collectionHeaders">
