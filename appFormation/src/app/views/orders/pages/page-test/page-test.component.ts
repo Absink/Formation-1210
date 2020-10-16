@@ -15,6 +15,7 @@ export class PageTestComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(p => {
       console.log(p);
+      if ( p.get('id'))
       // p.get('id');
       this.paramId =  p.get('id');
     })

@@ -6,11 +6,12 @@ import { TableStripedComponent } from './table-striped/table-striped.component';
 import { TitreAComponent } from './titre-a/titre-a.component';
 import { TitreBComponent } from './titre-b/titre-b.component';
 import { TextsModule } from '../texts/texts.module';
+import { TitreCComponent } from './titre-c/titre-c.component';
 
 
 
 @NgModule({
-  declarations: [TableLightComponent, TableDarkComponent, TableStripedComponent, TitreAComponent, TitreBComponent],
+  declarations: [TableLightComponent, TableDarkComponent, TableStripedComponent, TitreAComponent, TitreBComponent, TitreCComponent],
   imports: [
     CommonModule,
     TextsModule
@@ -19,7 +20,8 @@ import { TextsModule } from '../texts/texts.module';
     TableDarkComponent,
     TableStripedComponent,
     TitreAComponent,
-    TitreBComponent
+    TitreBComponent,
+    TitreCComponent
   ]
 })
 export class TemplatesModule { }

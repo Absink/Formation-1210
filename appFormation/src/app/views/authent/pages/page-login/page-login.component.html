@@ -11,7 +11,8 @@
       <input formControlName="password" type="password" class="form-control" id="password">
     </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="formUser.invalid">Login</button>
+    <button type="submit" class="btn btn-primary" [disabled]="formUser.invalid">Login Admin</button>
+    <button type="submit" class="btn btn-primary" (click)="connectUser()">Login User</button>
 
   </form>
 </div>

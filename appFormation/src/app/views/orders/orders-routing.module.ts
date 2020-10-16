@@ -7,6 +7,7 @@ import { PageTestComponent } from './pages/page-test/page-test.component';
 const routes: Routes = [
   { path: '', component: PageListOrdersComponent, data: { title: 'Orders', subtitle: 'List of order'} },
   { path: 'add', component: PageAddOrderComponent, data: { title: 'Orders', subtitle: 'Add order'} },
+  { path: 'test', component: PageTestComponent },
   { path: 'test/:id', component: PageTestComponent }
 
 ];

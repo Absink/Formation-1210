@@ -17,13 +17,17 @@ export class PageListUsersComponent implements OnInit {
   public btnAddUser: BtnI;
   public userConnected: boolean;
   public user: User;
+  public isAdmin: boolean;
   public role: string;
+  public title: string;
 
   constructor(
     private us: UsersService
   ) { }
 
   ngOnInit(): void {
+    this.title = 'User Management';
+    this.isAdmin = false;
     this.solution1();
     // this.solution2();
 
@@ -39,6 +43,7 @@ export class PageListUsersComponent implements OnInit {
       this.us.getById(localStorage.id).subscribe(data => {
         this.user = data;
         if (this.user.role === RoleUser.ADMIN) {
+          this.isAdmin = true;
           this.us.getAll().subscribe(datas => this.users = datas);
         } else {
           this.users.push(this.user);

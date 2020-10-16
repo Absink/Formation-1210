@@ -26,7 +26,7 @@ export class ContentComponent implements OnInit {
     //   localStorage.id = data[0].id;
     // })
     localStorage.removeItem('id');
-    
+
   }
 
 }

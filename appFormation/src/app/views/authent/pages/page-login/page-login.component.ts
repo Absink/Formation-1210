@@ -41,4 +41,14 @@ export class PageLoginComponent implements OnInit {
     });
   }
 
+  public connectUser() {
+    this.us.getByUsernameAndPassword2('user2', 'user2').subscribe(data => {
+      if (data[0]) {
+        localStorage.id = data[0].id;
+        localStorage.username = data[0].username;
+        this.router.navigate(['/home']);
+      }
+    });
+  }
+
 }

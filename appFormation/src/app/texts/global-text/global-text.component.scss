@@ -26,6 +26,16 @@ h1, h2, h3, p, span, i, li {
   }
 }
 
+.pages-user {
+  h1 {
+    font-weight: bold;
+    color: $color-user;
+    background-color: $background-color-user;
+  }
+}
+
+
+
 h1 {
   font-size: $h1-fz;
   margin-top: 0;

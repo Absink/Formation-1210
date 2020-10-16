@@ -68,4 +68,12 @@ export class UsersService {
       })
     )
   }
+
+  public add(user: User): Observable<User> {
+    return this.http.post<User>(`${this.url}users`, user).pipe(
+      map(data => {
+        return new User(data);
+      })
+    )
+  }
 }
