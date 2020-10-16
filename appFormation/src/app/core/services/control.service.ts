@@ -9,7 +9,7 @@ export class ControlService implements CanActivate {
   constructor(private router: Router) { }
 
   public canActivate(): boolean {
-    if (localStorage.username) {
+    if (localStorage.id) {
       return true;
     }
     this.router.navigate(['/home']);

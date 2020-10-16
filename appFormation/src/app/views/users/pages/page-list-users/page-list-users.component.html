@@ -1,15 +1,59 @@
-<app-table-striped *ngIf="users" [headers]="headers">
-  <tr *ngFor="let u of users">
-    <td>{{ u.id }}</td>
-    <td>{{ u.username }}</td>
-    <td>
-      <select (change)="updateRole(u, $event)">
-        <option *ngFor="let role of roles" [value]="role" [selected]="role === u.role">
-          {{ role }}
-        </option>
-      </select>
-    </td>
-  </tr>
-</app-table-striped>
+<!-- <div *ngIf="role == 'Admin'">
+  <app-table-striped *ngIf="users" [headers]="headers">
+    <tr *ngFor="let u of users">
+      <td>{{ u.id }}</td>
+      <td>{{ u.username }}</td>
+      <td>
+        <select (change)="updateRole(u, $event)">
+          <option *ngFor="let role of roles" [value]="role" [selected]="role === u.role">
+            {{ role }}
+          </option>
+        </select>
+      </td>
+    </tr>
+  </app-table-striped>
 
-<app-btn [label]="btnAddUser.label" [route]="btnAddUser.route"></app-btn>
+  <app-btn [label]="btnAddUser.label" [route]="btnAddUser.route"></app-btn>
+</div>
+
+<!-- <ng-template #else></ng-template> -->
+
+<!-- <div *ngIf="role != 'Admin'">
+  <app-table-striped [headers]="headers">
+    <tr>
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>
+        <select (change)="updateRole(user, $event)">
+          <option *ngFor="let role of roles" [value]="role" [selected]="role === user.role">
+            {{ role }}
+          </option>
+        </select>
+      </td>
+    </tr>
+  </app-table-striped>
+
+  <app-btn [label]="btnAddUser.label" [route]="btnAddUser.route"></app-btn>
+</div> -->
+
+<div *ngIf="userConnected">
+  <app-table-striped *ngIf="users" [headers]="headers">
+    <tr *ngFor="let u of users">
+      <td>{{ u.id }}</td>
+      <td>{{ u.username }}</td>
+      <td>
+        <select (change)="updateRole(u, $event)">
+          <option *ngFor="let role of roles" [value]="role" [selected]="role === u.role">
+            {{ role }}
+          </option>
+        </select>
+      </td>
+    </tr>
+  </app-table-striped>
+
+  <app-btn [label]="btnAddUser.label" [route]="btnAddUser.route"></app-btn>
+</div>
+
+<div *ngIf="!userConnected">
+  <p> Désolé, non connecté</p>
+</div>
