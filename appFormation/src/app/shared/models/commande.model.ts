@@ -9,7 +9,7 @@ export class Commande implements CommandeI {
   nbJours = 1;
   tauxTva = 20;
   statut: string;
-  typeCommande: TypeCommande.OPTION;
+  typeCommande = TypeCommande.OPTION;
   notes: string;
 
   totalHT(): number {
