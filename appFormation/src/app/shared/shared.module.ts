@@ -11,11 +11,19 @@ import { RouterModule } from '@angular/router';
 
 
 @NgModule({
-  declarations: [TotalPipe, DaysPipe, Days2Pipe, ColorStateDirective, ColorDaysDirective, BtnComponent],
+  declarations: [
+    TotalPipe,
+    DaysPipe,
+    Days2Pipe,
+    ColorStateDirective,
+    ColorDaysDirective,
+    BtnComponent
+  ],
   imports: [
     CommonModule,
     RouterModule
-  ], exports: [
+  ],
+  exports: [
     TotalPipe,
     DaysPipe,
     Days2Pipe,

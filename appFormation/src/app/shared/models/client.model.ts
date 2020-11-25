@@ -1,17 +1,14 @@
-import { StateClient } from '../enums/state-client.enum';
 import { ClientI } from '../interfaces/client-i';
 
 export class Client implements ClientI {
   id: number;
-  tva = 20;
-  state = StateClient.ACTIVE;
-  name: string;
-  ca: number;
-  comment: string;
-
-  total(): number {
-    return this.ca * (1 + this.tva / 100);
-  }
+  nom: string;
+  prenom: string;
+  societe: string;
+  email: string;
+  telephone: string;
+  mobile: string;
+  notes: string;
 
   constructor(obj?: Partial<Client>) {
     if (obj) {

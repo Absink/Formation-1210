@@ -1,15 +1,15 @@
-import { RoleUser } from '../enums/role-user.enum';
-import { UserI } from '../interfaces/user-i';
+import { UtilisateurI } from '../interfaces/utilisateur-i';
 
-export class User implements UserI {
+export class Utilisateur implements UtilisateurI {
   id: number;
   username: string;
-  password: string;
-  role = RoleUser.USER;
+  pass: string;
+  email: string;
 
-  constructor(o?: Partial<User>) {
+  constructor(o?: Partial<Utilisateur>) {
     if(o){
       Object.assign(this, o)
     }
   }
+
 }
