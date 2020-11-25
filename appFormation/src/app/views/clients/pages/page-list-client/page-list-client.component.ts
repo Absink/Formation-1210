@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { StateClient } from 'src/app/shared/enums/state-client.enum';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
 import { Client } from 'src/app/shared/models/client.model';
-import { ClientsService } from '../../services/clients.service';
+import { ClientsService } from '../../../../core/services/clients.service';
 
 @Component({
   selector: 'app-page-list-client',
@@ -38,16 +38,6 @@ export class PageListClientComponent implements OnInit {
 
   public changeState(client: Client, event): void {
     this.cs.updateState(client, event.target.value).subscribe(data => client.state = data.state);
-  }
-
-  public filter(): void {
-    if (!this.filtered) {
-      // this.cs.getAllFilterByCA(100000).subscribe(datas => this.collectionClients = datas);
-      this.collectionClients = this.cs.getAllFilterByCA(100000);
-    } else {
-      this.collectionClients = this.cs.collection;
-    }
-    this.filtered = !this.filtered;
   }
 
 }

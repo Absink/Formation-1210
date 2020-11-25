@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { StateOrder } from 'src/app/shared/enums/state-order.enum';
 import { BtnI } from 'src/app/shared/interfaces/btn-i';
 import { Order } from 'src/app/shared/models/order.model';
-import { OrdersService } from '../../services/orders.service';
+import { OrdersService } from '../../../../core/services/orders.service';
 
 @Component({
   selector: 'app-page-list-orders',

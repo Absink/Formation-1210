@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.title = 'Mon application V2';
+    this.title = 'CRM';
   }
 
 }

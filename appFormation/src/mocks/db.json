@@ -56,7 +56,7 @@
     },
     {
       "tva": 20,
-      "state": "Inactive",
+      "state": "Active",
       "name": "Modis",
       "ca": 120000,
       "comment": "Un comment pour client modis",
@@ -72,7 +72,7 @@
     },
     {
       "tva": 20,
-      "state": "Inactive",
+      "state": "Active",
       "name": "Tete",
       "ca": 75000,
       "comment": "new !!",

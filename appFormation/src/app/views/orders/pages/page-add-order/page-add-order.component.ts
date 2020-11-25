@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Order } from 'src/app/shared/models/order.model';
-import { OrdersService } from '../../services/orders.service';
+import { OrdersService } from '../../../../core/services/orders.service';
 
 @Component({
   selector: 'app-page-add-order',
