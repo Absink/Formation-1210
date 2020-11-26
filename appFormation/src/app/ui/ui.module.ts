@@ -7,11 +7,7 @@ import { IconsModule } from '../icons/icons.module';
 
 @NgModule({
   declarations: [ContentComponent],
-  imports: [
-    CommonModule,
-    IconsModule
-  ], exports: [
-    ContentComponent
-  ]
+  imports: [CommonModule, IconsModule],
+  exports: [ContentComponent]
 })
 export class UiModule { }

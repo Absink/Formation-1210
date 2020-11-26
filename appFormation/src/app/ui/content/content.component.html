@@ -1,12 +1,12 @@
-
+<!-- HEADER -->
 <header class="fixed-top">
   <app-icon-nav (click)="switch()"></app-icon-nav>
   <ng-content select="app-header"></ng-content>
   <app-icon-poweroff (click)="deconnect()"></app-icon-poweroff>
 </header>
 
+<!-- MAIN -->
 <main [ngClass]="{'close-aside': !open}">
-
   <div class="shadow position-fixed">
   </div>
 
@@ -17,14 +17,11 @@
   </aside>
 
   <div class="page">
-
     <div class="contents">
       <ng-content select=".content"></ng-content>
     </div>
-
     <footer>
       <ng-content select="app-footer"></ng-content>
     </footer>
-
   </div>
 </main>

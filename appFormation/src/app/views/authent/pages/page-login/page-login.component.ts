@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from 'src/app/core/services/users.service';
-import { User } from 'src/app/shared/models/user.model';
+import { UtilisateursService } from 'src/app/core/services/utilisateurs.service';
+import { Utilisateur } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-page-login',
@@ -12,18 +12,18 @@ import { User } from 'src/app/shared/models/user.model';
 export class PageLoginComponent implements OnInit {
 
   public formUser: FormGroup;
-  public user: User = new User();
+  public user: Utilisateur = new Utilisateur();
 
   constructor(
     private fb: FormBuilder,
-    private us: UsersService,
+    private us: UtilisateursService,
     private router: Router
     ) { }
 
   ngOnInit(): void {
     this.formUser = this.fb.group ({
       username: [this.user.username],
-      password: [this.user.password]
+      password: [this.user.pass]
     })
     // this.user.username = this.formUser.get('username').toString();
     // this.user.password = this.formUser.get('password').toString();

@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Order } from '../models/order.model';
 
 @Pipe({
   name: 'days'

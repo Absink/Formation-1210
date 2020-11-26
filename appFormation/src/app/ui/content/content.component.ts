@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsersService } from 'src/app/core/services/users.service';
-
+import { UtilisateursService } from 'src/app/core/services/utilisateurs.service';
 @Component({
   selector: 'app-content',
   templateUrl: './content.component.html',
@@ -10,7 +9,7 @@ export class ContentComponent implements OnInit {
 
   public open: boolean;
 
-  constructor(private us: UsersService) { }
+  constructor(private us: UtilisateursService) { }
 
   ngOnInit(): void {
     this.open = false;
@@ -21,12 +20,7 @@ export class ContentComponent implements OnInit {
   }
 
   public deconnect(): void {
-    // this.us.getByUsernameAndPassword2('user1', 'user1').subscribe(data => {
-    //   localStorage.username = data[0].username;
-    //   localStorage.id = data[0].id;
-    // })
     localStorage.removeItem('id');
-
   }
 
 }
